@@ -1,0 +1,94 @@
+/* navbar.css */
+.navbar-container {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif;
+  background-color: #3acffd;
+  border-bottom: 1px solid #eaedf1;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed; /* Add this */
+  top: 0; /* Add this */
+  left: 0; /* Add this */
+  right: 0; /* Add this */
+  z-index: 1000; /* Add this to ensure navbar stays on top */
+}
+
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-logo-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.navbar-logo-text {
+  color: #101418;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.015em;
+}
+
+.navbar-links-container {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar-link {
+  color: #101418;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-link:hover {
+  color: #3b82f6;
+}
+
+.navbar-auth-buttons {
+  display: flex;
+  gap: 8px;
+  margin-left: 32px;
+}
+
+.navbar-button {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 9999px;
+  height: 30px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 0.5;
+  letter-spacing: 0.015em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2px;
+  max-width: 480px;
+  transition: all 0.2s ease;
+}
+
+.navbar-button-register {
+  background-color: #ffffff;
+  color: #101418;
+}
+
+.navbar-button-login {
+  background-color: #eaedf1;
+  color: #101418;
+}
+
+.navbar-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

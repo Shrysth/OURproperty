@@ -1,0 +1,306 @@
+/* Base Styles */
+.inbox-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inbox-header {
+  margin-bottom: 30px;
+}
+
+.inbox-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.inbox-header p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+/* Search */
+.search-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #95a5a6;
+}
+
+/* Messages List */
+.messages-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.message-item {
+  display: flex;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.message-item:hover {
+  background: #f8f9fa;
+}
+
+.message-item.unread {
+  background: #f0f7ff;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.message-details {
+  flex: 1;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.message-header h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #95a5a6;
+}
+
+.message-preview {
+  margin: 5px 0;
+  color: #34495e;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message-phone {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #95a5a6;
+}
+
+.empty-icon {
+  margin-bottom: 15px;
+  color: #bdc3c7;
+}
+
+.empty-state h3 {
+  margin: 10px 0;
+  color: #7f8c8d;
+}
+
+/* Message Detail View */
+.message-detail-view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #3498db;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.sender-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.sender-info h2 {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+}
+
+.meta-info {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.meta-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.message-content {
+  padding: 20px 0;
+  line-height: 1.6;
+  color: #34495e;
+  white-space: pre-line;
+}
+
+.message-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.action-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.reply-button {
+  background: #3498db;
+  color: white;
+}
+
+.reply-button:hover {
+  background: #2980b9;
+}
+
+.delete-button {
+  background: #f5f5f5;
+  color: #e74c3c;
+}
+
+.delete-button:hover {
+  background: #e0e0e0;
+}
+
+/* Error State */
+.error-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-icon {
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+.error-state h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.retry-button {
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.retry-button:hover {
+  background: #2980b9;
+}
+
+/* Skeleton Loading */
+.skeleton-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .message-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .message-time {
+    margin-top: 5px;
+  }
+  
+  .meta-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
