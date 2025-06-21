@@ -25,7 +25,7 @@ services:
   backend:
     build:
       context: ./Backend  # Path to your backend Dockerfile
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     container_name: property_backend
     depends_on:
       mysql:
@@ -59,7 +59,7 @@ services:
   frontend:
     build:
       context: ./ourproperties  # Path to your React app
-      dockerfile: dockerfile  # Ensure you have a Dockerfile in the frontend directory
+      dockerfile: Dockerfile  # Ensure you have a Dockerfile in the frontend directory
     container_name: property_frontend
     ports:
       - "3000:3000"  # Expose the React app on port 3000
