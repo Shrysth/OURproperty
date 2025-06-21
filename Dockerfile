@@ -14,6 +14,7 @@ WORKDIR /app
 COPY Backend/ ./Backend/
 COPY --from=frontend-build /app/ourproperties/build/ ./Backend/src/main/resources/static/
 WORKDIR /app/Backend
+RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
 # ----- FINAL STAGE -----
