@@ -24,8 +24,8 @@ services:
 
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./Backend  # Path to your backend Dockerfile
+      dockerfile: dockerfile
     container_name: property_backend
     depends_on:
       mysql:
@@ -33,19 +33,19 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_APPLICATION_NAME=Backend
-      - SERVER_PORT=8080
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/ourproperties
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=admin
-      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SPRING_JPA_SHOW_SQL=true
-      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQL8Dialect
-      - SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL=true
-      - IMAGE_DIRECTORY=/app/images
-      - SERVER_SERVLET_SESSION_TIMEOUT=30m
-      - JWT_SECRET=jwts3cr3tK3y10m20241s2d3f4StrongSecretForJWT123addubdbdbdyabbncbhsy656551c6rf8ef1fa1af1erf31aef
+      SPRING_APPLICATION_NAME: Backend
+      SERVER_PORT: 8080
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ourproperties?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQL8Dialect
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: true
+      IMAGE_DIRECTORY: /app/images
+      SERVER_SERVLET_SESSION_TIMEOUT: 30m
+      JWT_SECRET: jwts3cr3tK3y10m20241s2d3f4StrongSecretForJWT123addubdbdbdyabbncbhsy656551c6rf8ef1fa1af1erf31aef
     volumes:
       - property_images:/app/images
     networks:
@@ -55,6 +55,18 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+
+  frontend:
+    build:
+      context: ./ourproperties  # Path to your React app
+      dockerfile: dockerfile  # Ensure you have a Dockerfile in the frontend directory
+    container_name: property_frontend
+    ports:
+      - "3000:3000"  # Expose the React app on port 3000
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8080  # Use the service name for backend
+    networks:
+      - property-network
 
 volumes:
   mysql_data:
