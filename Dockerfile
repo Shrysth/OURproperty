@@ -9,7 +9,7 @@ RUN npm install
 RUN npm run build
 
 # ----- BACKEND STAGE -----
-FROM eclipse-temurin:17-jdk AS backend
+FROM eclipse-temurin:21-jdk AS backend
 WORKDIR /app
 COPY Backend/ ./Backend/
 COPY --from=frontend-build /app/ourproperties/build/ ./Backend/src/main/resources/static/
